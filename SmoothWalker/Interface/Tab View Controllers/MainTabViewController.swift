@@ -30,7 +30,8 @@ class MainTabViewController: UITabBarController {
             createWelcomeViewController(),
             createWeeklyQuantitySampleTableViewController(),
             createChartViewController(),
-            createWeeklyReportViewController()
+            createWeeklyReportViewController(),
+            newController(),
         ]
         
         self.viewControllers = viewControllers.map {
@@ -73,6 +74,15 @@ class MainTabViewController: UITabBarController {
         let viewController = WeeklyReportTableViewController()
         
         viewController.tabBarItem = UITabBarItem(title: "Weekly Report",
+                                                 image: UIImage(systemName: "star"),
+                                                 selectedImage: UIImage(systemName: "star.fill"))
+        return viewController
+    }
+    
+    private func newController() -> UIViewController {
+        let viewController = ViewController()
+        
+        viewController.tabBarItem = UITabBarItem(title: "HRV",
                                                  image: UIImage(systemName: "star"),
                                                  selectedImage: UIImage(systemName: "star.fill"))
         return viewController
